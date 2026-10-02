@@ -24,5 +24,10 @@ int main(int argc, char** argv) {
 
     printf("%s %s, %d, %s\n", (*person_1).name, (*person_1).surname, (*person_1).age, (*person_1).nationality);
 
+    free((*person_1).name);
+    free((*person_1).surname);
+    free((*person_1).nationality);
+    free(person_1);
+
     return 0;
 }
