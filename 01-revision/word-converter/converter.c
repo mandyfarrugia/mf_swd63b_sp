@@ -57,7 +57,7 @@ int main(int argc, char** argv) {
 
 		int index = 0;
 		while(fscanf(file_ptr, "%49s", word) == 1) {
-			*(words_list + index) = (char*)realloc(*(words_list + index), strlen(word) * sizeof(char));
+			*(words_list + index) = (char*)realloc(*(words_list + index), (strlen(word) + 1) * sizeof(char));
 			char* uppercase_word = converter(word);
 			strcpy(*(words_list + index), uppercase_word);
 			free(uppercase_word);
@@ -85,4 +85,6 @@ int main(int argc, char** argv) {
 
 		free(words_list);
 	}
+
+	return 0;
 }
