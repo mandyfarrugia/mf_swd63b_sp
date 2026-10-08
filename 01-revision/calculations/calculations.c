@@ -19,12 +19,12 @@ void flush_buffer() {
     while ((c = getchar()) != '\n' && c != EOF) { };
 }
 
-int seek_integer_input(void) {
+int seek_integer_input(char* message) {
     int number = 0;
     int check_value = 0;
 
     do {
-        printf("Enter the first number: ");
+        printf("%s", message);
         check_value = scanf("%d", &number);
 
         if(check_value < 1 || number < 0) {
@@ -40,8 +40,8 @@ int main(int argc, char** argv) {
     signed int first_number, second_number = 0;
     int check_value = 0;
 
-    first_number = seek_integer_input();
-    second_number = seek_integer_input();
+    first_number = seek_integer_input("Enter the first number: ");
+    second_number = seek_integer_input("Enter the second number: ");
     
     printf("Sum: %d\n", sum(first_number, second_number));
     printf("Average: %.2f\n", average(first_number, second_number));
