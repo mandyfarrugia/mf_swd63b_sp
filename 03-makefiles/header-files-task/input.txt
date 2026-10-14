@@ -1,0 +1,3 @@
+Learning C is interesting.
+Header files help organise code.
+This program analyses a text file.
