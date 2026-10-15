@@ -1,0 +1,5 @@
+TEXT FILE REPORT
+Characters: 94
+Words:      15
+Lines:      3
+Vowels:     30

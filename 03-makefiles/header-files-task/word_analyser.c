@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
+//#include "word_analyser.h" //Included on purpose here to test the header file guard.
 
 int isVowel(int ch)
 {
