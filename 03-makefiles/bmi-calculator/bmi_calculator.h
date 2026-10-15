@@ -1,0 +1,1 @@
+double calculate_bmi(double weight_in_kg, double height_in_metres);

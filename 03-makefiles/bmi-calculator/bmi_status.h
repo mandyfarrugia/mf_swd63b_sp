@@ -1,0 +1,1 @@
+char* generate_status_from_bmi(double bmi_result);
