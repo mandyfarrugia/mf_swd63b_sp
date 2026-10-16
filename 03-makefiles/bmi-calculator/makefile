@@ -3,7 +3,7 @@ all: bmi_analyser
 bmi_analyser: main.o bmi_calculator.o bmi_status.o value_converter.o
 	@gcc -Wall -Wextra main.o bmi_calculator.o bmi_status.o value_converter.o -o bmi_analyser
 
-main.o: main.c
+main.o: main.c value_converter.h bmi_calculator.h bmi_status.h
 	@gcc -Wall -Wextra -c main.c -o main.o
 
 bmi_calculator.o: bmi_calculator.c bmi_calculator.h
@@ -19,6 +19,6 @@ run: bmi_analyser
 	@./bmi_analyser $(WEIGHT) $(HEIGHT) $(OUTPUT_FILE)
 
 clean:
-	@rm *.o -f bmi_analyser
+	@rm -f *.txt *.o bmi_analyser
 
 rebuild: clean all
