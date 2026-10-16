@@ -1,15 +1,17 @@
-#include <stdio.h>
+#include <stddef.h>
+#include <math.h>
 
-char* generate_status_from_bmi(double bmi_result) {
+const char* generate_status_from_bmi(double bmi_result) {
+    if(!isfinite(bmi_result) || bmi_result <= 0) {
+        return NULL;
+    }
     if(bmi_result < 18.5) {
         return "Underweight";
-    } else if(bmi_result >= 18.5 && bmi_result <= 24.9) {
+    } else if(bmi_result < 25.0) {
         return "Normal";
-    } else if(bmi_result >= 25 && bmi_result <= 29.9) {
+    } else if(bmi_result < 30.0) {
         return "Overweight";
-    } else if(bmi_result >= 30) {
+    } else {
         return "Obese";
     }
-
-    return NULL;
 }
